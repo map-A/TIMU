@@ -34,3 +34,7 @@ add_executable(243_3 243_3.cpp)
 add_executable(double53_1 double53_1.cpp)
 add_executable(double53_2 double53_2.cpp)
 add_executable(double53_3 double53_3.cpp)
+
+add_executable(242_1 242_1.cpp)
+add_executable(242_2 242_2.cpp)
+add_executable(242_3 242_3.cpp)
