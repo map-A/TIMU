@@ -83,3 +83,8 @@ add_executable(double54_3 Contest/double54_3.cpp)
 
 add_executable(244_1 Contest/244_1.cpp)
 add_executable(244_2 Contest/244_2.cpp)
+add_executable(244_3 Contest/244_3.cpp)
+
+add_executable(243_1 Contest/243_1.cpp)
+add_executable(243_2 Contest/243_2.cpp)
+add_executable(243_3 Contest/243_3.cpp)
