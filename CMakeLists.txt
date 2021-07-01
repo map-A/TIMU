@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(leetcode)
 
 set(CMAKE_CXX_STANDARD 14)
+add_subdirectory(Contest)
 
 add_executable(main main.cpp)
 add_executable(p54 p54.cpp)
@@ -49,6 +50,7 @@ add_executable(offer62 offer62.cpp)
 add_executable(offer64 offer64.cpp)
 add_executable(offer65 offer65.cpp)
 add_executable(offer67 offer67.cpp)
+add_executable(offer38 offer38.cpp)
 add_executable(offer3 offer3.cpp)
 add_executable(p57 p57.cpp)
 add_executable(p71 p71.cpp)
@@ -60,4 +62,5 @@ add_executable(p752 p752.cpp)
 add_executable(p213 p213.cpp)
 add_executable(p209 p209.cpp)
 
-add_subdirectory(Contest)
+add_executable(LCP07 LCP07.cpp)
+

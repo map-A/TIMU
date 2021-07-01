@@ -17,3 +17,6 @@ git 取消代理\
 `git config --global --unset http.proxy`\
 `git config --global --unset https.proxy`
 
+统计写了多少行代码？在git project下执行
+
+`git log  --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }'`
