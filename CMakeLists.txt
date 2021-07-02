@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(Contest)
 
 add_executable(main main.cpp)
+add_executable(p32 p32.cpp)
+add_executable(p97 p97.cpp)
 add_executable(p54 p54.cpp)
 add_executable(p74 p74.cpp)
 add_executable(p852 p852.cpp)
