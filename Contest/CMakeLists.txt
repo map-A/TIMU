@@ -10,6 +10,11 @@ add_executable(247_2 247_2.cpp)
 add_executable(247_3 247_3.cpp)
 add_executable(247_4 247_4.cpp)
 
+add_executable(248_1 248_1.cpp)
+add_executable(248_2 248_2.cpp)
+add_executable(248_3 248_3.cpp)
+add_executable(248_4 248_4.cpp)
+
 add_executable(246_1 246_1.cpp)
 add_executable(246_2 246_2.cpp)
 add_executable(246_3 246_3.cpp)

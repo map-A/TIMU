@@ -11,8 +11,8 @@ vector<vector<int>> insert(vector<vector<int>> &intervals, vector<int> &newInter
         return {newInterval};
     }
     vector<vector<int>> ret;
-
     intervals.push_back(newInterval);
+
     sort(intervals.begin(), intervals.end(), cmp);
     ret.push_back(intervals[0]);
     for (int i = 1; i < intervals.size(); i++) {

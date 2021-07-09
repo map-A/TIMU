@@ -2,6 +2,7 @@
 
 using namespace std;
 int numDecodings(string s) {
+    //TODO: 需要好好复习一下
     int n = s.size();
     if(n==0||(n==1&&s[0]=='0')) return 0;
     if(n==1) return 1;
