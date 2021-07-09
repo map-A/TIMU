@@ -28,10 +28,10 @@ void dfs(int s, int t, vector<vector<int>> &matri, vector<vector<int>> &vis, vec
         cyc = (cyc + 1) % 4;
     }
     dfs(s, t, matri, vis, ret, cyc);
-
 }
 
-vector<int> spiralOrder(vector<vector<int>> &matrix) {
+vector<int> spiralOrder1(vector<vector<int>> &matrix) {
+    if (matrix.empty()) return {};
     int n = matrix.size();
     int m = matrix[0].size();
 
@@ -39,14 +39,53 @@ vector<int> spiralOrder(vector<vector<int>> &matrix) {
     vector<int> ret;
     int cyc = 0;
     dfs(0, 0, matrix, vis, ret, cyc);
-
     return ret;
 }
 
+vector<int> spiralOrder(vector<vector<int>> &matrix) {
+    if (matrix.empty()) return {};
+
+    int m = matrix.size(), n = matrix[0].size();
+    vector<int> ret;
+    int left = 0, top = 0, right = n - 1, bottom = m - 1;
+    while (left <right && top <bottom) {
+        for (int i = left; i < right; i++) {
+            ret.push_back(matrix[top][i]);
+        }
+        for (int i = top; i < bottom; i++) {
+            ret.push_back(matrix[i][right]);
+        }
+        for (int i = right; i > left; i--) {
+            ret.push_back(matrix[bottom][i]);
+        }
+        for (int i = bottom; i > top; i--) {
+            ret.push_back(matrix[i][left]);
+        }
+        left++;
+        right--;
+        top++;
+        bottom--;
+    }
+    if(left==right&top==bottom){
+        ret.push_back(matrix[left][top]);
+    }
+    else if(top==bottom){
+        for (int i = left; i <=right; i++) {
+            ret.push_back(matrix[top][i]);
+        }
+    }
+    else if(left==right){
+        for (int i = top; i <= bottom; i++) {
+            ret.push_back(matrix[i][right]);
+        }
+    }
+    return ret;
+}
+
+
 int main() {
     vector<vector<int>> matric = {{1, 2, 3},
-                                  {4, 5, 6},
-                                  {7, 8, 9}};
+    };
     vector<int> ret;
     ret = spiralOrder(matric);
     for (auto i :ret) {
