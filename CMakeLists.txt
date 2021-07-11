@@ -79,4 +79,4 @@ add_executable(p209 p209.cpp)
 add_executable(p645 p645.cpp)
 add_executable(LCP07 LCP07.cpp)
 add_executable(p810 p810.cpp)
-
+add_executable(p33 p33.cpp)
