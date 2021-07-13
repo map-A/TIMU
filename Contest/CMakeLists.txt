@@ -5,6 +5,13 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(double55_1 double55_1.cpp)
 add_executable(double55_2 double55_2.cpp)
 add_executable(double55_3 double55_3.cpp)
+
+add_executable(double56_1 double56_1.cpp)
+add_executable(double56_2 double56_2.cpp)
+add_executable(double56_3 double56_3.cpp)
+add_executable(double56_4 double56_4.cpp)
+
+
 add_executable(247_1 247_1.cpp)
 add_executable(247_2 247_2.cpp)
 add_executable(247_3 247_3.cpp)

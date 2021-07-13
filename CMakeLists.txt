@@ -3,7 +3,7 @@ project(leetcode)
 
 set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(Contest)
-
+add_subdirectory(NC)
 add_executable(main main.cpp)
 add_executable(p4 p4.cpp)
 add_executable(p22 p22.cpp)
