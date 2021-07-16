@@ -13,7 +13,7 @@ bool checkIfPangram(string sentence) {
     return true;
 }
 int main() {
-    string sentence = "leetcode";
+    string sentence = "Leetcode";
     bool ret = checkIfPangram(sentence);
     return 0;
 }
