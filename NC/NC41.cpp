@@ -2,28 +2,79 @@
 
 using namespace std;
 
-int maxLength(vector<int> &arr) {
-    // write code here
-    map<int, int> m;
+int maxLength(string s) {
+    map<char, int> m;
     int left = 0, right = 0;
     int ret = 0;
-    while (right < arr.size()) {
-        if (m[arr[right]] == 0) {
-            m[arr[right]] = right + 1;
+    while (right < s.size()) {
+        if (m[s[right]] == 0) {
+            m[s[right]] = right + 1;
             ret = max(ret, right - left + 1);
         } else {
-            //收缩left
-            for (; left < m[arr[right]]; left++) {
-                m[arr[left]] = 0;
+            for (; left < m[s[right]]; left++) {
+                m[s[left]] = 0;
             }
-            m[arr[right]] = right + 1;
+            m[s[right]] = right + 1;
         }
         right++;
     }
     return ret;
 }
 
+int help(vector<vector<int>> &course) {
+    //找出course最大的时间点
+    int t_max = INT_MIN;
+    for (int i = 0; i < course.size(); i++) {
+        t_max = max(t_max, course[i][1]);
+    }
+
+    vector<vector<int>> dp(t_max + 1, vector<int>(t_max + 1, 0));
+    //初始化
+    for (auto i:course) {
+        dp[i[0]][i[1]] = i[2];
+    }
+
+
+    for (int i = 0; i < t_max; i++) {
+        for (int j = i + 1; j < t_max; j++) {
+            for (int k = i + 1; k <= j; k++) {
+                dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j]);
+            }
+        }
+    }
+
+    //找dp[i][j]中最大值
+    int ret = 0;
+    for (int i = 0; i < t_max; i++) {
+        for (int j = i + 1; j < t_max; j++) {
+            ret = max(dp[i][j], ret);
+        }
+    }
+    return ret;
+}
+
+
 int main() {
+    vector<vector<int>> course;
+    int n = 10;
+    for(int i=0;i<n;i++){
+        int start = rand()%10;
+        int end = start+1+ rand()%10;
+        int val = rand()%10+1;
+        course.push_back({start,end,val});
+    }
+    for(auto i:course){
+        for(auto j:i){
+            cout<<j<<' ';
+        }
+        cout<<"\n";
+    }
+    int ret = help(course);
+    cout<<ret;
+    return 0;
+}
+
+int main1() {
     vector<int> arr = {10174, 22971, 3540, 589, 26054, 24343, 5283, 10613, 15564, 30419, 28743, 16962, 12924, 3002,
                        11504, 623, 22203, 6892, 3276, 14022, 18747, 29478, 23093, 7301, 15692, 31043, 10793, 27142,
                        28661, 5635, 8954, 19103, 17475, 12556, 6982, 20936, 31201, 23854, 9514, 10619, 12777, 6635,
@@ -50,6 +101,6 @@ int main() {
                        10326, 423, 24154, 26554, 8416, 6798, 3917, 22567, 25350, 16920, 22022, 13885, 29509, 19986,
                        18217, 16860, 22671, 5633, 22332, 27716, 4787, 24513, 9401, 18904, 21785, 32620, 10337, 20770,
                        2};
-    int ret = maxLength(arr);
+    //int ret = maxLength(arr);
     return 0;
 }
