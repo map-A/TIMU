@@ -21,6 +21,5 @@ int minCost(int maxTime,vector<vector<int>>&edges,vector<int>passingFees){
     return ret==INT_MAX/2?-1:ret;
 }
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
