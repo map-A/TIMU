@@ -3,19 +3,6 @@
 using namespace std;
 typedef long long LL;
 
-vector<int> findRedundantConnection(vector<vector<int>>& edges) {
-    int N = edges.size();
-    vector<int>parent(N+1,-1);
-    int count =0;
-    for(int i=0; i<N; ++i){
-        if(!Union(parent,edges[i][0],edges[i][1]))
-            break;
-        count++;
-    }
-    return edges[count];
-
-}
-
 int find(vector<int>&parent, int i)
 {//并查集查找，查找i所在的子集
     if (parent[i] == -1)
@@ -32,6 +19,21 @@ bool Union(vector<int>&parent, int x, int y)
     }
     return true;
 }
+
+vector<int> findRedundantConnection(vector<vector<int>>& edges) {
+    int N = edges.size();
+    vector<int>parent(N+1,-1);
+    int count =0;
+    for(int i=0; i<N; ++i){
+        if(!Union(parent,edges[i][0],edges[i][1]))
+            break;
+        count++;
+    }
+    return edges[count];
+
+}
+
+
 
 int main() {
     return 0;
