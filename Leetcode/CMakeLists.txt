@@ -90,3 +90,28 @@ add_executable(p346 p346.cpp)
 add_executable(p457 p457.cpp)
 add_executable(p539 p539.cpp)
 add_executable(p1822 p1822)
+add_executable(p39 p39)
+add_executable(p1791 p1791)
+add_executable(p338 p338.cpp)
+add_executable(p739 p739.cpp)
+add_executable(p256 p256.cpp)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
