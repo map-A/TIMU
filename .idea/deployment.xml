@@ -2,6 +2,16 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="Remote Host (96cfa194-bdac-4b63-a9b7-3d0eb95449cc)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.Yk1ccicSs4" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/build" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="WSL (feb7acc1-5856-4bf7-9eec-cfb7eb791662)">
         <serverdata>
           <mappings>
