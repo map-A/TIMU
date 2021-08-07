@@ -96,10 +96,15 @@ add_executable(p338 p338.cpp)
 add_executable(p739 p739.cpp)
 add_executable(p256 p256.cpp)
 add_executable(p1637 p1637.cpp)
+add_executable(p797.cpp p797.cpp)
+add_executable(p1773 p1773.cpp)
+add_executable(p1844 p1844.cpp)
+add_executable(p1854 p1854.cpp)
 
+add_executable(p1812 p1812.cpp)
+add_executable(p1837 p1837.cpp)
 
-
-
+add_executable(p1732 p1732.cpp)
 
 
 
