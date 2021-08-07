@@ -12,6 +12,13 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="WSL (a0a8ba5c-0102-49c7-8ae0-70c15c711bf1)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="WSL (feb7acc1-5856-4bf7-9eec-cfb7eb791662)">
         <serverdata>
           <mappings>
