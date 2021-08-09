@@ -11,7 +11,7 @@ add_executable(NC46 NC46.cpp)
 add_executable(NC34 NC34.cpp)
 add_executable(NC35 NC35.cpp)
 add_executable(NC37 NC37.cpp)
-
+add_executable(NC39 NC39.cpp)
 add_executable(NC40 NC40.cpp)
 
 add_executable(jz29 jz29.cpp)
