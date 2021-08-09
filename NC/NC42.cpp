@@ -45,7 +45,7 @@ bool next_Permutation_Of_Own(vector<int> &num) {
     return true;
 }
 
-vector<vector<int>> permuteUnique(vector<int> &num) {
+vector<vector<int>> permute(vector<int> &num) {
     sort(num.begin(), num.end());
     vector<vector<int>> ret;
     ret.push_back(num);
