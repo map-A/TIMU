@@ -105,6 +105,10 @@ add_executable(p1812 p1812.cpp)
 add_executable(p1837 p1837.cpp)
 
 add_executable(p1732 p1732.cpp)
+add_executable(p318 p318.cpp)
+add_executable(p64 p64.cpp)
+add_executable(p1143 p1143.cpp)
+add_executable(p300 p300.cpp)
 
 
 

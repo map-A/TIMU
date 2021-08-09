@@ -69,3 +69,12 @@ add_executable(252_1 252_1.cpp)
 add_executable(252_2 252_2.cpp)
 add_executable(252_3 252_3.cpp)
 add_executable(252_4 252_4.cpp)
+
+add_executable(double58_1 double58_1.cpp)
+add_executable(double58_2 double58_2.cpp)
+add_executable(double58_3 double58_3.cpp)
+
+add_executable(253_1 253_1.cpp)
+add_executable(253_2 253_2.cpp)
+add_executable(253_3 253_3.cpp)
+add_executable(253_4 253_4.cpp)
