@@ -113,7 +113,9 @@ add_executable(p980 p980.cpp)
 add_executable(p773 p773.cpp)
 add_executable(p446 p446.cpp)
 add_executable(p516 p516.cpp)
-
+add_executable(offer_2_49 offer_2_49.cpp)
+add_executable(p120 p120.cpp)
+add_executable(p1768 p1768.cpp)
 
 
 
