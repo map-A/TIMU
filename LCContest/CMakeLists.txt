@@ -78,3 +78,7 @@ add_executable(253_1 253_1.cpp)
 add_executable(253_2 253_2.cpp)
 add_executable(253_3 253_3.cpp)
 add_executable(253_4 253_4.cpp)
+
+add_executable(254_1 254_1.cpp)
+add_executable(254_2 254_2.cpp)
+add_executable(254_3 254_3.cpp)

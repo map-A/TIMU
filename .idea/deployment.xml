@@ -2,24 +2,31 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Remote Host (96cfa194-bdac-4b63-a9b7-3d0eb95449cc)">
+      <paths name="Remote Host (ab6c9daf-7d2e-49f5-a453-e7377c1fe8c2)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.Yk1ccicSs4" local="$PROJECT_DIR$" />
+            <mapping deploy="/tmp/tmp.wPvmSbelYL" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/build" />
           </excludedPaths>
         </serverdata>
       </paths>
-      <paths name="WSL (a0a8ba5c-0102-49c7-8ae0-70c15c711bf1)">
+      <paths name="Remote Host (c46b2f3b-f7e5-47d4-aaf5-da21f7605957)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="WSL (feb7acc1-5856-4bf7-9eec-cfb7eb791662)">
+      <paths name="WSL (5d16802d-3db2-4015-9b0f-5171980ef18c)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WSL (71ac1f1a-35d4-4f83-a541-b11ca304d146)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
