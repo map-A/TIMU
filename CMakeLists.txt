@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
 project(leetcode)
-
 set(CMAKE_CXX_STANDARD 14)
-add_subdirectory(LCContest)
-add_subdirectory(NC)
-add_subdirectory(Leetcode)
-add_executable(main main.cpp)
-add_subdirectory(NCTest)
-add_subdirectory(ACwing)
-add_subdirectory(Geeks/dp)
+file(GLOB_RECURSE CPP_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/*.cpp)
+
+foreach(v ${CPP_SRC_LIST})
+    string(REGEX REPLACE "${PROJECT_SOURCE_DIR}/" "" target_name ${v})
+    # rename '/' and '.' to '_'
+    string(REGEX REPLACE "/|\\." "_" target_name ${target_name})
+    add_executable(${target_name} ${v})
+endforeach()
