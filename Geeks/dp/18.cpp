@@ -25,13 +25,9 @@ bool findPartiion(const int arr[], int n) {
     // initialize top row as true
     for (i = 0; i <= n; i++)
         part[0][i] = true;
-
-    // initialize leftmost column,
-    // except part[0][0], as 0
     for (i = 1; i <= sum / 2; i++)
         part[i][0] = false;
 
-    // Fill the partition table in bottom up manner
     for (i = 1; i <= sum / 2; i++) {
         for (j = 1; j <= n; j++) {
             part[i][j] = part[i][j - 1];
@@ -40,14 +36,6 @@ bool findPartiion(const int arr[], int n) {
         }
     }
 
-    /* // uncomment this part to print table
-    for (i = 0; i <= sum/2; i++)
-    {
-    for (j = 0; j <= n; j++)
-        cout<<part[i][j];
-    cout<<endl;
-    } */
-
     return part[sum / 2][n];
 }
 
@@ -55,7 +43,6 @@ int main() {
     int arr[] = {3, 1, 1, 2, 2, 1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    // Function call
     if (findPartiion(arr, n))
         cout << "Can be divided into two subsets of equal sum";
     else
