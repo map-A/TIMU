@@ -1,5 +1,7 @@
 #include "bits/stdc++.h"
 
+//大跌的时候耐得住，大涨的时候耐不住
+//顺势而走，非逆势而上
 using namespace std;
 //回文子串的个数
 int countSubstrings(string s) {
