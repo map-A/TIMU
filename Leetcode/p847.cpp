@@ -8,9 +8,9 @@ int shortestPathLength(vector<vector<int>>& graph) {
     queue<tuple<int,int,int>>q; //node number-mask,present the node is whether visited-length
     vector<vector<int>>vis(n,vector<int>(1<<n));
     //状态数组，以数字第i位是否为1表示结点i是否被访问了,vis[v]=mask
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;++i){
         q.emplace(i,1<<i,0);
-        vis[i][1<<i] = 1;
+        vis[i][1<<i] = true;
     }
     int ret = 0;
     //此时q以所有结点为初始结点的情况，
@@ -22,12 +22,12 @@ int shortestPathLength(vector<vector<int>>& graph) {
             ret = dist;
             break;
         }
-        for(auto v:graph[u]){
+        for(int v:graph[u]){
             //u为当前的起始点,将mask的第v位设置为1
             int mask_v = mask|(1<<v);
             if(!vis[v][mask_v]){
                 q.emplace(v,mask_v,dist+1);
-                vis[v][mask] = 1;
+                vis[v][mask] = true;
             }
         }
     }
