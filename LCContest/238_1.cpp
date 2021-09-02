@@ -10,7 +10,6 @@ int sumBase(int n, int k) {
     return ans;
 }
 int main() {
-    int n = 34,k = 6;
-    int ret = sumBase(n,k);
+
     return 0;
 }
