@@ -16,8 +16,6 @@ vector<int> getMaximumXor(vector<int>& nums, int maximumBit) {
     return ret;
 }
 int main() {
-    vector<int>num = {0,1,1,3};
-    int maximumBit = 2;
-    vector<int >ret = getMaximumXor(num,maximumBit);
+
     return 0;
 }
