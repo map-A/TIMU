@@ -13,6 +13,7 @@ long long countVowels(string word) {
     return ret;
 }
 int main() {
-
+    realloc()
+    auto r = countVowels("sasa");
     return 0;
 }
