@@ -1,33 +1,25 @@
 #include "bits/stdc++.h"
 
 using namespace std;
+int minSteps(string s, string t) {
+    int ret = 0;
+    if(s==t) return  ret;
+    vector<int>alpha1(26,0);
+    vector<int>alpha2(26,0);
 
-  struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode() : val(0), next(nullptr) {}
-      ListNode(int x) : val(x), next(nullptr) {}
-      ListNode(int x, ListNode *next) : val(x), next(next) {}
-  };
-
-ListNode* mergeNodes(ListNode* head) {
-    ListNode *ret = new ListNode();
-    ListNode *p = ret;
-    ListNode *q = head;
-    int sum = 0;
-    while (q) {
-        if (q->val != 0) {
-            sum += q->val;
-        } else {
-            p->next = new ListNode(sum);
-            sum = 0;
-            p = p->next;
-        }
-        q = q->next;
+    for (int i = 0; i < s.size(); ++i) {
+        alpha1[s[i]-'a']++;
     }
-    return ret->next->next;
+    for (int i = 0; i < t.size(); ++i) {
+        alpha2[t[i]-'a']++;
+    }
+    for (int i = 0; i < 26; ++i) {
+        ret+= abs(alpha1[i]-alpha2[i]);
+    }
+    return ret;
 }
 int main() {
-
+    string s = "cotxazilut",t = "nahrrmcchxwrieqqdwdpneitkxgnt";
+    int ret = minSteps(s,t);
     return 0;
 }

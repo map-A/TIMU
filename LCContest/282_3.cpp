@@ -1,34 +1,33 @@
 #include "bits/stdc++.h"
 
 using namespace std;
+bool help(vector<int>&time,int totalTrips,long long t){
+    long long ret = 0;
+    for (int i = 0; i < time.size(); ++i) {
+        ret+=t/ time[i];
+        if(totalTrips<=ret) return true;
+    }
+    return false;
 
-string repeatLimitedString(string s, int repeatLimit) {
-    vector<int> cnt(26);
-    for (char c: s){
-        cnt[c - 'a'] += 1;
-    }
-    string t;
-    int L = -1;
-    while (true) {
-        int done = 1;
-        int mx = -1;
-        for (int i = 25; i >= 0; i -= 1) {
-            if (cnt[i] and mx == -1) mx = i;
-            if (cnt[i] and i != L) {
-                L = i;
-                done = 0;
-                break;
-            }
-        }
-        if (done) break;
-        int x = min(cnt[L], L == mx ? repeatLimit : 1);
-        cnt[L] -= x;
-        for (int j = 0; j < x; j += 1) t += 'a' + L;
-    }
-    return t;
 }
-
+long long minimumTime(vector<int>& time, int totalTrips) {
+    sort(time.begin(),time.end());
+    long long l = 0,r = 1e16;
+    long long mid = (r-l)/2+l;
+    while (l<r){
+        if(help(time,totalTrips,mid)){
+            r = mid;
+        }
+        else{
+            l = mid+1;
+        }
+        mid = (r-l)/2+l;
+    }
+    return l;
+}
 int main() {
-
+    vector<int>time = {2};
+    int totoalTrip = 1;
+    auto ret = minimumTime(time,totoalTrip);
     return 0;
 }
