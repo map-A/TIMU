@@ -3,12 +3,19 @@
 using namespace std;
 
 int main() {
-    char b[2][3] = {{'1','2','3'},{'1','2','3'}};
-    char *p = (char *)b;
-    vector<int>a = {1,2,3,4,5};
-    set<int>c = {1,2,3};
-   // remove(c.begin(),c.end(),3);
-    remove(a.begin(),a.end(),2);
+    string txt = "dasdasdfdgdADSDSd";
+    vector<int>m(128);
+    for (int i = 0; i < txt.size(); ++i) {
+        m[txt[i]]++;
+    }
+    int ret = INT_MIN;
+    char ret_ch=0;
+    for (int i = 0; i < 128; ++i) {
+        if(m[i]>ret){
+            ret = m[i];
+            ret_ch = (char)(i);
+        }
+    }
 
    // a.erase(a.begin()+2);
     return 0;
