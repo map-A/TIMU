@@ -53,6 +53,61 @@ string longestWord(vector<string>& words) {
     return longest;
 }
 int main() {
+    vector<string>students;
+    map<string,vector<int>>m;
+    for (int i = 0; i < students.size(); ++i) {
+        if(m.count(students[i])){
+            //表示m中已经有这个名字le
+            //这里只是想饶你知道map 的count 方法
+            m[students[i]].push_back(i);
+        }
+        else{
+            m[students[i]].push_back(i);
+        }
+    }
 
+    // 重名的，m[student_name] 这个vector de size 肯定大于1
+    char* p1 = new char[100];
+    char p2[100];
+    char* p3 = "hello";
+    cout<< sizeof(p1)<<endl;
+    cout<< sizeof(p2)<<endl;
+    cout<< sizeof(p3)<<endl;
     return 0;
 }
+
+
+
+int gemstonesGame(vector<int>& gemstones){
+    int n = gemstones.size();
+    vector<int> sum(n + 1, 0);
+    for(int i=0;i<n;i++){
+        sum[i + 1] = sum[i] + gemstones[i];
+    }
+    vector<int> dp(n + 1, 0);
+    int max_num = sum[n];
+    for(int i=n-1;i>0;i--){
+        dp[i] = max_num;
+        max_num = max(max_num, sum[i] - dp[i]);
+    }
+    return dp[1];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

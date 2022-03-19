@@ -9,21 +9,8 @@
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/build" />
+            <excludedPath local="true" path="$PROJECT_DIR$/build" />
           </excludedPaths>
-        </serverdata>
-      </paths>
-      <paths name="Remote Host (c46b2f3b-f7e5-47d4-aaf5-da21f7605957)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="WSL (5d16802d-3db2-4015-9b0f-5171980ef18c)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
         </serverdata>
       </paths>
       <paths name="WSL (71ac1f1a-35d4-4f83-a541-b11ca304d146)">
