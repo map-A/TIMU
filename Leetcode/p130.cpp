@@ -58,11 +58,33 @@ void solve(vector<vector<char>>& board) {
     }
 }
 int main() {
-    vector<vector<char>>board ={
-            {'X','O','X','O','X','O'},
-            {'O','X','O','X','O','X'},
-            {'X','O','X','O','X','O'},
-            {'O','X','O','X','O','X'}};
-    solve(board);
+//    vector<vector<char>>board ={
+//            {'X','O','X','O','X','O'},
+//            {'O','X','O','X','O','X'},
+//            {'X','O','X','O','X','O'},
+//            {'O','X','O','X','O','X'}};
+//    solve(board);
+
+
+    set<int>s1 = {1,2,3};
+    set<int>s2 = {3,4,5};
+    set<int>s3 = {6,7};
+    vector<set<int>>v = {s1,s2,s3};
+    set<int>C;
+    vector<set<int>>ans;
+    ans.push_back(s1);
+    for (int i = 1; i < v.size(); ++i) {
+        set<int>t = ans[ans.size()-1];
+        set_intersection(t.begin(),t.end(),v[i].begin(),v[i].end(), inserter(C,C.begin()));
+        if(!C.empty()){
+            set_union(t.begin(),t.end(),v[i].begin(),v[i].end(),inserter(C, C.begin() ) );
+            ans[ans.size()-1] = C;
+        }
+        else{
+            ans.push_back(v[i]);
+        }
+        C.clear();
+    }
+
     return 0;
 }
