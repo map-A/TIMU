@@ -24,8 +24,8 @@ int maxValueOfCoins(vector<vector<int>>& piles, int k) {
     int pilesNum = piles.size();
     vector<vector<int>>dp(pilesNum,vector<int>(k + 1));
     // 初始化
-    for(int j = 1; j <= piles.get(0).size() && j <= k; j++) {
-        dp[0][j] = dp[0][j - 1] + piles.get(0).get(j - 1);
+    for(int j = 1; j <= piles[0].size() && j <= k; j++) {
+        dp[0][j] = dp[0][j - 1] + piles[0][j - 1];
     }
     // 遍历每一组物品i∈[1,pilesNum-1]
     for(int i = 1; i <= pilesNum - 1; i++) {
@@ -41,7 +41,7 @@ int maxValueOfCoins(vector<vector<int>>& piles, int k) {
                 if(m >= 1) sum += piles[i][m - 1];
                 // 若当前背包容量还装得下第k组物品的第m个物品(体积为m)->滚动获取最大值
                 // 拿之前的or拿现在的->取大的值
-                if(j >= m) dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - m] + sum);
+                if(j >= m) dp[i][j] = max(dp[i][j], dp[i - 1][j - m] + sum);
             }
         }
     }
