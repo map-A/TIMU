@@ -1,6 +1,56 @@
 #include "bits/stdc++.h"
 
 using namespace std;
+int toNum(string s){
+    string tmp;
+    for(auto i:s){
+        tmp+= to_string(i-'a');
+    }
+    int ret = stoi(tmp);
+    return ret;
+}
+bool isSumEqual(string firstWord, string secondWord, string targetWord) {
+    int a = toNum(firstWord);
+    int b = toNum(secondWord);
+    int c = toNum(targetWord);
+    return a+b==c;
+}
+
+
+string maxValue(string n, int x) {
+    //检查是否为负数
+    int flag = 1;
+    if(n[0]=='-') flag=-1;
+    if(flag==1){
+        //正数的情况
+        int i;
+        for(i=0;i<n.size();i++){
+            //找到第一个比x小的位置,在其前面插入
+            if(n[i]-'0'<x){
+                n.insert(i,to_string(x));
+                break;
+            }
+        }
+        if(i==n.size())n.append(to_string(x));
+    }
+    else{
+        //负数的情况
+        int i;
+        for(i=1;i<n.size();i++){
+            //找到第一个比x大的位置
+            if(n[i]-'0'>x){
+                n.insert(i,to_string(x));
+                break;
+            }
+        }
+        if(i==n.size()){
+            n.insert(i,to_string(x));
+        }
+    }
+    return n;
+}
+
+
 using  PIL= pair<long long,int>;
 using PII = pair<int,int>;
 bool operator > (vector<int>&a,vector<int>&b)
@@ -46,8 +96,9 @@ vector<int> assignTasks(vector<int>& servers, vector<int>& tasks) {
     return ret;
 }
 int main() {
-    vector<int>server = {10,63,95,16,85,57,83,95,6,29,71};
-    vector<int>tasks = {70,31,83,15,32,67,98,65,56,48,38,90,5};
-    vector<int>ret =  assignTasks(server,tasks);
+    string firstWord = "acb";
+    string secondWord = "cba";
+    string targetWord = "cdb";
+    bool ret =isSumEqual(firstWord,secondWord,targetWord);
     return 0;
 }

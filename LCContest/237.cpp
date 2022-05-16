@@ -1,6 +1,33 @@
 #include "bits/stdc++.h"
 
 using namespace std;
+bool checkIfPangram(string sentence) {
+    bool vis[26];
+    memset(vis,false,sizeof(vis));
+    for(auto i:sentence){
+        vis[i-'a'] =1;
+    }
+    for(int i=0;i<26;i++){
+        if(vis[i]==0) return false;
+    }
+    return true;
+}
+
+int maxIceCream(vector<int>& costs, int coins) {
+    int ret = 0;
+    sort(costs.begin(),costs.end());
+    for(int i=0;i<costs.size();++i){
+        if(costs[i]<=coins){
+            coins-=costs[i];
+            ret++;
+        }
+        else{
+            break;
+        }
+    }
+    return ret;
+}
+
 
 using PII = pair<int, int>;
 using LL = long long;
@@ -41,7 +68,7 @@ vector<int> getOrder(vector<vector<int>> &tasks) {
 }
 
 int main() {
-    vector<vector<int>>task = {{1,2},{2,4},{3,2},{4,1}};
-    auto ret = getOrder(task);
+    string sentence = "Leetcode";
+    bool ret = checkIfPangram(sentence);
     return 0;
 }

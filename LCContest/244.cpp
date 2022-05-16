@@ -28,6 +28,24 @@ bool findRotation(vector<vector<int>>& mat, vector<vector<int>>& target) {
     return false;
 }
 
+int reductionOperations(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    int n = nums.size();
+    int ret = 0;
+    int cnt = 0;
+    for(int i=1;i<n;i++){
+        if(nums[i]!=nums[i-1]){
+            cnt++;//发现有多少个不同的元素
+        }
+        ret+=cnt;
+    }
+    return ret;
+}
+int minFlips(string s) {
+    //TODO: 我不会啊
+}
+
+
 int main() {
     string num = "4205";
     return 0;
