@@ -1,3 +1,8 @@
+#include "bits/stdc++.h"
+
+using namespace std;
+
+
 //def deleteText(article: str, index: int) -> str:
 //    a = article.split(" ")
 //    start = 0
