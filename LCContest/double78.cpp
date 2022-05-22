@@ -25,8 +25,32 @@ int waysToSplitArray(vector<int>& nums) {
     }
     return ret;
 }
-int maximumWhiteTiles(vector<vector<int>>& tiles, int carpetLen) {
 
+
+
+int maximumWhiteTiles(vector<vector<int>>& tiles, int carpetLen) {
+    sort(tiles.begin(), tiles.end());
+    int ans = 0, l = 0, r = 0, sum = 0;
+    while(r < tiles.size())
+    {
+        int leftbound = tiles[l][0], rightbound = leftbound + carpetLen - 1;
+        if(rightbound >= tiles[r][1])  // 注意这里必须要有等于,否则会出现数组越界错误!
+        {
+            sum += tiles[r][1] - tiles[r][0] + 1;
+            r++;
+            ans = max(ans, sum);
+        }
+        else
+        {
+            if(rightbound >= tiles[r][0])
+            {
+                ans = max(ans, sum + rightbound - tiles[r][0] + 1);
+            }
+            sum -= tiles[l][1] - tiles[l][0] + 1;
+            l++;
+        }
+    }
+    return ans;
 }
 
 
